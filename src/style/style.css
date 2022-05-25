@@ -2,7 +2,7 @@
 
 :root{
   --text:#f5f5f5;
-  --black: #404E7C;
+  --black: #293047;
 }
 
 html,body,p{
@@ -24,7 +24,7 @@ body{
 .top{
   display: flex;
   justify-content: space-between;
-  padding: 100px;
+  padding: 60px 100px;
   gap: 100px;
 }
 
@@ -53,6 +53,7 @@ body{
   grid-template-rows: 1fr 1fr 1fr;
   gap:40px 20px;
   font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .hourly-data div p{
@@ -76,5 +77,106 @@ body{
 #country{
   margin-top: 10px;
   font-size: 23px;
+  font-weight: 300;
+}
+
+.right div{
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+
+.right div img{
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+  filter: invert(100%);
+}
+
+#city{
+  font-family: inherit;
+  color: inherit;
+  background:none;
+  padding: 5px 15px;
+  border: 1px solid var(--text);
+  border-radius: 30px;
+}
+
+#city::placeholder{
+  letter-spacing: 2px;
+}
+
+/* BOTTOM */
+
+.bottom{
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.large-icon{
+  width: 100px;
+  height: 100px;
+}
+
+.today{
+  display: flex;
+  padding: 20px 100px;
+  gap:30px;
+}
+
+.today div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.today div p:first-child{
+  background-color: var(--black);
+  text-align: center;
+  border-radius: 10px;
+  width: 70px;
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+.today div p:last-child{
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+.small-icon{
+  width: 60px;
+  height: 60px;
+}
+
+.daily{
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+}
+
+.daily-data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap:25px;
+}
+
+.daily-data p:first-child{
+  background-color: var(--black);
+  text-align: center;
+  border-radius: 10px;
+  width: 40px;
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+.daily-data p:last-child{
+  font-size: 30px;
   font-weight: 300;
 }
