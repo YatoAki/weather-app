@@ -1,13 +1,8 @@
 import '../style/style.css';
-import night from "../assets/night.jpg";
-import day from "../assets/day.jpg";
+import background from "../assets/background.png";
 
-function changeDayBackground() {
-  document.body.style.backgroundImage = `url(${day})`;
+function setBackground() {
+  document.body.style.backgroundImage = `url(${background})`;
 }
 
-function changeNightBackground() {
-  document.body.style.backgroundImage = `url(${night})`;
-}
-
-changeDayBackground();
+setBackground();
