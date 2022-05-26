@@ -10,9 +10,11 @@ html,body,p{
   margin: 0;
 }
 
+
 body{
   font-family: Roboto, sans-serif;
   min-height: 100vh;
+  background-color: var(--black);
   background-image: url("../assets/background.png");
   background-repeat: no-repeat;
   background-size: cover;

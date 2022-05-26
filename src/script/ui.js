@@ -5,6 +5,7 @@ export default class UI{
 
   static loadPage(){
     UI.setBtn();
+    API.start("Mandalay");
   }
 
   static getInput(){
