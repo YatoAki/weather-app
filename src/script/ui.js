@@ -84,4 +84,33 @@ export default class UI{
     today.querySelector(".temp").textContent = todayTemperature + "°";
   }
 
+  static updateWeeklyPredict(weeklyData,date){
+    const daily = document.querySelector(".daily");
+    daily.textContent = "";
+    for (let i = 1; i < 7 ; i+=1){
+      let weekDay = Convert.getWeekDay((date.getDay() + i)%7);
+      let weather = weeklyData[i].weather[0]["description"];
+      let icon = Convert.weatherToPic(weeklyData[i].weather[0]["icon"]) + ".png";
+      let temp = Convert.KToC((weeklyData[i].temp.max + weeklyData[1].temp.min)/2);
+
+      daily.append(UI.createDailyCard(weekDay,weather,icon,temp));
+    }
+  }
+
+  static createDailyCard(weekDay,weather,icon,temp){
+    const div = document.createElement("div");
+    div.classList.add("daily-data");
+    const dayPara = document.createElement("p");
+    dayPara.textContent = weekDay;
+    const img = document.createElement("img");
+    img.src = icon;
+    img.classList.add("small-icon");
+    const tempPara = document.createElement("p");
+    tempPara.textContent = temp + "°";
+    div.appendChild(dayPara);
+    div.appendChild(img);
+    div.appendChild(tempPara);
+    return div;
+  }
+
 }

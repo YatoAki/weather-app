@@ -15,6 +15,7 @@ export default class API{
     UI.updateTime(date);
     UI.updateHourlyPredict(detailData.hourly);
     UI.updateTodayPredict(initialData,date);
+    UI.updateWeeklyPredict(detailData.daily,date);
   }
 
   static makeDetailRequestUrl(lon,lat){

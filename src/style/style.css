@@ -130,6 +130,7 @@ body{
 .large-icon{
   width: 150px;
   height: 150px;
+  display: block;
 }
 
 .today{
@@ -160,8 +161,8 @@ body{
 }
 
 .small-icon{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .daily{
@@ -175,14 +176,14 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap:25px;
+  gap:10px;
 }
 
 .daily-data p:first-child{
   background-color: var(--black);
   text-align: center;
   border-radius: 10px;
-  width: 40px;
+  width: 50px;
   padding: 5px 0;
   font-size: 13px;
 }
