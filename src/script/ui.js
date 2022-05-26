@@ -1,5 +1,5 @@
 import API from "./api.js"
-
+import Convert from "./convert.js"
 
 export default class UI{
 
@@ -36,7 +36,11 @@ export default class UI{
     error.textContent = "";
   }
 
-  static updateLocation(){
-    
+  static updateLocation(cityName,countryCode){
+    const countryName = Convert.toCountryName(countryCode);
+    const location = document.getElementById("location");
+    const country = document.getElementById("country");
+    location.textContent = cityName;
+    country.textContent = countryName;
   }
 }
