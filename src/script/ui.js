@@ -45,9 +45,8 @@ export default class UI{
     country.textContent = countryName;
   }
 
-  static updateTime(timezone){
-    const datetime_str = new Date().toLocaleString("en-US", { timeZone: timezone });
-    const date = new Date(datetime_str);
+  static updateTime(date){
+
     const formattedDay = Convert.getFormattedDay(date);
     const formattedTime = Convert.getFormattedTime(date);
 
@@ -71,6 +70,18 @@ export default class UI{
     seven.textContent = `${sevenData} expected.`;
     oneFive.textContent = `${oneFiveData} can appear.`;
     twoThree.textContent = `we may see ${twoThreeData}.`;
+  }
+
+  static updateTodayPredict(todayData,date){
+    const todayTemperature = Convert.KToC(todayData.main.temp);
+    const todayWeather = todayData.weather[0]["description"];
+    const todayIcon = Convert.weatherToPic(todayData.weather[0]["icon"]) + ".png";
+    const weekday = Convert.getWeekDay(date.getDay());
+
+    const today = document.querySelector(".today");
+    const img = document.getElementById("today-icon");
+    img.src = todayIcon;
+    today.querySelector(".temp").textContent = todayTemperature + "°";
   }
 
 }

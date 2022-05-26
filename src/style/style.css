@@ -128,21 +128,21 @@ body{
 }
 
 .large-icon{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .today{
   display: flex;
   padding: 20px 100px;
-  gap:30px;
 }
 
 .today div{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap:20px;
 }
 
 .today div p:first-child{

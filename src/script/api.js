@@ -3,13 +3,18 @@ import UI from "./ui.js"
 export default class API{
   static async start(cityName){
     const initialData = await API.requestInitialData(cityName);
+    console.log(initialData);
     if (!initialData) return;
     UI.updateLocation(initialData.name,initialData.sys.country);
     const lon = initialData.coord.lon;
     const lat = initialData.coord.lat;
     const detailData = await API.requestDetailData(lon,lat);
-    UI.updateTime(detailData.timezone);
+    const datetime_str = new Date().toLocaleString("en-US", { timeZone: detailData.timezone });
+    const date = new Date(datetime_str);
+
+    UI.updateTime(date);
     UI.updateHourlyPredict(detailData.hourly);
+    UI.updateTodayPredict(initialData,date);
   }
 
   static makeDetailRequestUrl(lon,lat){
