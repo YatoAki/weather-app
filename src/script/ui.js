@@ -59,4 +59,18 @@ export default class UI{
     timePara.innerHTML = `${splitTime[0]}<span>${splitTime[1]}<span>`;
   }
 
+  static updateHourlyPredict(hourlyData){
+    const seven = document.getElementById("7");
+    const oneFive = document.getElementById("15");
+    const twoThree = document.getElementById("23");
+
+    const sevenData = hourlyData[14]['weather'][0]["description"];
+    const oneFiveData = hourlyData[30]["weather"][0]["description"];
+    const twoThreeData = hourlyData[46]["weather"][0]["description"];
+
+    seven.textContent = `${sevenData} expected.`;
+    oneFive.textContent = `${oneFiveData} can appear.`;
+    twoThree.textContent = `we may see ${twoThreeData}.`;
+  }
+
 }
