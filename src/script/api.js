@@ -3,6 +3,7 @@ import UI from "./ui.js"
 export default class API{
   static async start(cityName){
     const initialData = await API.requestInitialData(cityName);
+    if (!initialData) return;
     const lon = initialData.coord.lon;
     const lat = initialData.coord.lat;
     const detailData = await API.requestDetailData(lon,lat);

@@ -36,7 +36,7 @@ export default class UI{
     error.textContent = "";
   }
 
-  static updateUI(){
-
+  static updateLocation(){
+    
   }
 }
