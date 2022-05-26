@@ -35,4 +35,8 @@ export default class UI{
     input.value = "";
     error.textContent = "";
   }
+
+  static updateUI(){
+    
+  }
 }
