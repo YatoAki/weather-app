@@ -79,9 +79,23 @@ export default class UI{
     const weekday = Convert.getWeekDay(date.getDay());
 
     const today = document.querySelector(".today");
-    const img = document.getElementById("today-icon");
+    today.textContent = "";
+    const img = document.createElement("img");
+    const div = document.createElement("div");
+    const todayPara = document.createElement("p");
+    const para = document.createElement("p");
+
+    console.log(img,div,todayPara,para);
+
     img.src = todayIcon;
-    today.querySelector(".temp").textContent = todayTemperature + "°";
+    img.classList.add("large-icon");
+    todayPara.textContent = "Today";
+    div.appendChild(todayPara);
+    para.classList.add("temp");
+    para.textContent = todayTemperature + "°";
+    div.appendChild(para);
+    today.appendChild(img);
+    today.appendChild(div);
   }
 
   static updateWeeklyPredict(weeklyData,date){
