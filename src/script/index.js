@@ -1,12 +1,5 @@
 import '../style/style.css';
-import background from "../assets/background.png";
 import API from "./api.js";
+import UI from "./ui.js"
 
-function setBackground() {
-  document.body.style.backgroundImage = `url(${background})`;
-}
-
-setBackground();
-
-console.log("hello");
-API.start("wakanda");
+UI.loadPage();
