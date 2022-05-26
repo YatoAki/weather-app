@@ -1,3 +1,5 @@
+import UI from "./ui.js"
+
 export default class API{
   static start(cityName){
     const url = API.makeRequestUrl(cityName);
@@ -14,9 +16,10 @@ export default class API{
       const response = await fetch(url,{mode:'cors'});
       const weatherData = await response.json();
       if (weatherData.cod !== 200){
-        console.log("404 not found")
+        UI.handleError();
         return null;
       }else{
+        UI.cleanUpInput();
         return weatherData;
       }
     } catch (error){
