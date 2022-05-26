@@ -24,9 +24,9 @@ export default class UI{
     });
   }
 
-  static handleError(cityName){
+  static handleError(text){
     const error = document.getElementById("error");
-    error.textContent = "Sorry, the name of the city is not found.";
+    error.textContent = text;
   }
 
   static cleanUpInput(){
@@ -37,6 +37,6 @@ export default class UI{
   }
 
   static updateUI(){
-    
+
   }
 }
