@@ -43,4 +43,19 @@ export default class UI{
     location.textContent = cityName;
     country.textContent = countryName;
   }
+
+  static updateTime(timezone){
+    const datetime_str = new Date().toLocaleString("en-US", { timeZone: timezone });
+    const date = new Date(datetime_str);
+    const formattedDay = Convert.getFormattedDay(date);
+    const formattedTime = Convert.getFormattedTime(date);
+
+    const datePara = document.getElementById("date");
+    datePara.textContent = formattedDay;
+
+    let splitTime = formattedTime.split(" ");
+    const timePara = document.getElementById("time");
+    timePara.innerHTML = `${splitTime[0]}<span>${splitTime[1]}<span>`;
+  }
+
 }

@@ -9,11 +9,12 @@ export default class API{
     const lon = initialData.coord.lon;
     const lat = initialData.coord.lat;
     const detailData = await API.requestDetailData(lon,lat);
+    UI.updateTime(detailData.timezone);
     console.log(detailData);
   }
 
   static makeDetailRequestUrl(lon,lat){
-    return `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts&appid=1bd3a1f212c7d6849195a18bd92cac18`
+    return `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&appid=1bd3a1f212c7d6849195a18bd92cac18`
   }
 
   static async requestDetailData(lon,lat){
