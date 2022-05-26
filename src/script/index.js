@@ -9,4 +9,4 @@ function setBackground() {
 setBackground();
 
 console.log("hello");
-API.start("Mandalay");
+API.start("Wakanda");

@@ -15,8 +15,8 @@ export default class API{
       const response = await fetch(url,{mode:'cors'});
       const weatherData = await response.json();
       return weatherData;
-    } catch {
-      console.log("Failed")
+    } catch (error){
+      console.log("Error occured");
     }
 
   }
