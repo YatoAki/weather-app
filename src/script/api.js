@@ -1,9 +1,8 @@
 export default class API{
   static start(cityName){
     const url = API.makeRequestUrl(cityName);
-    console.log(url);
-    const data = API.requestData(url);
-    console.log(data);
+    const initialData = API.requestData(url);
+    console.log(initialData);
   }
 
   static makeRequestUrl(cityName){
@@ -14,10 +13,16 @@ export default class API{
     try {
       const response = await fetch(url,{mode:'cors'});
       const weatherData = await response.json();
-      return weatherData;
+      if (weatherData.cod !== 200){
+        console.log("404 not found")
+        return null;
+      }else{
+        return weatherData;
+      }
     } catch (error){
       console.log("Error occured");
     }
-
   }
+
+
 }
